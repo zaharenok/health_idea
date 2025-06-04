@@ -1,31 +1,49 @@
 # Health_idea
 
-Веб-приложение на Flask с поддержкой webhook и использованием секретных ключей из .env.
+A simple Flask-based web application demonstrating secure webhook handling with environment-based secret management.
 
-## Запуск
+## Overview
 
-1. Создайте файл `.env` в корне проекта и добавьте туда:
+This project provides a minimal example of how to securely handle webhook requests in a Python web application. All sensitive keys (API keys, secret keys, webhook secrets) are stored in a `.env` file and loaded at runtime, ensuring they are never committed to version control.
+
+## Features
+- Flask web server
+- Webhook endpoint (`/webhook`) that checks for a secret header
+- Uses environment variables for all secrets (via `.env` and `python-dotenv`)
+- `.env` is excluded from git via `.gitignore`
+
+## Quick Start
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/zaharenok/health_idea.git
+   cd health_idea
    ```
+2. **Create a `.env` file in the project root:**
+   ```env
    SECRET_KEY=sk_test_1234567890abcdef
    API_KEY=api_test_abcdef123456
    WEBHOOK_SECRET=whsec_test_abcdef987654
    ```
-2. Установите зависимости:
-   ```
+3. **Install dependencies:**
+   ```sh
    pip install -r requirements.txt
    ```
-3. Запустите сервер:
-   ```
+4. **Run the server:**
+   ```sh
    python webhook.py
    ```
 
-## Webhook endpoint
+## Webhook Usage
+- Endpoint: `POST /webhook`
+- Required header: `X-Webhook-Secret` (must match `WEBHOOK_SECRET` from `.env`)
+- Request body: JSON
+- Returns: JSON confirmation and echoes received data
 
-POST `/webhook`
+## Security Best Practices
+- Never commit your `.env` file or real secrets to git.
+- Always use unique, strong secrets for all keys.
+- Rotate secrets regularly if exposed.
 
-- В заголовке `X-Webhook-Secret` должен быть ключ из переменной `WEBHOOK_SECRET`.
-- Тело запроса — JSON.
-
-## Безопасность
-
-Файл `.env` добавлен в `.gitignore` и не попадёт в репозиторий.
+## License
+This project is provided as-is for educational purposes.
