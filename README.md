@@ -1,3 +1,5 @@
+![Project Demo](demo.png)
+
 # Health_idea
 
 A simple Flask-based web application demonstrating secure webhook handling with environment-based secret management.
