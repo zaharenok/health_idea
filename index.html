@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Health Metrics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="top-fixed">
+            <header>
+                <div class="date">04.06.25</div>
+                <h1>Health Dashboard</h1>
+            </header>
+            <div class="metrics">
+                <div class="metric-card">
+                    <div class="metric-value" id="weight-value">81<span class="metric-unit">kg</span></div>
+                    <div class="metric-label">Weight</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="sleep-value">7.5<span class="metric-unit">h</span></div>
+                    <div class="metric-label">Sleep</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" id="steps-value">11 738</div>
+                    <div class="metric-label">Steps</div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="recommendation" id="recommendation-text">
+                Изучив ваши данные, могу порекомендовать уделить внимание качеству отдыха — 7.5 часов сна это хорошо, но для максимального восстановления энергии попробуйте иногда увеличивать продолжительность сна до 8 часов и поддерживать регулярную физическую активность.
+            </div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

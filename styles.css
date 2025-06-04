@@ -1,0 +1,231 @@
+body {
+    background: #f0f0f3;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    color: #555;
+}
+
+.container {
+    max-width: 540px;
+    margin: 32px auto;
+    padding: 48px 32px 48px 32px;
+    background: #f0f0f3;
+    border-radius: 32px;
+    box-shadow:  10px 10px 30px #e0e0e3, -10px -10px 30px #ffffff;
+    transition: max-width 0.3s;
+    display: block;
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width: 900px;
+        padding: 48px 32px 48px 32px;
+        box-shadow:
+            0 16px 32px -8px #aeaec0a0,   /* нижняя тень */
+            0 -16px 32px -8px #aeaec0a0;  /* верхняя тень */
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        box-shadow:
+            0 12px 32px -8px #aeaec0a0;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.date {
+    color: #aaa;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    margin: 0 0 10px 0;
+}
+
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    background: #f0f0f3;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -10px -10px 30px #fff, 10px 10px 30px #aeaec0a0;
+    margin: 0 auto;
+    transition: box-shadow 0.2s, width 0.3s, height 0.3s;
+}
+
+@media (min-width: 900px) {
+    .metric-card {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.metric-card:hover {
+    box-shadow: -10px -10px 40px #fff, 10px 10px 40px #aeaec0a0;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+    text-align: center;
+    word-break: break-word;
+}
+
+@media (min-width: 900px) {
+    .metric-value {
+        font-size: 3.2rem;
+    }
+}
+
+.metric-unit {
+    font-size: 1.1rem;
+    color: #888;
+    margin-left: 3px;
+}
+
+.metric-label {
+    font-size: 1.02rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.recommendation {
+    background: #f0f0f3;
+    border-radius: 18px;
+    box-shadow: -8px -8px 18px #fff, 8px 8px 18px #aeaec040;
+    padding: 22px 18px;
+    font-size: 1.08rem;
+    color: #666;
+    max-width: 420px;
+    margin: 48px auto 0 auto;
+    transition: max-width 0.3s;
+    position: static;
+}
+
+@media (min-width: 900px) {
+    .recommendation {
+        max-width: 600px;
+        font-size: 1.15rem;
+        margin: 48px auto 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-fixed {
+        margin-bottom: 24px;
+    }
+    .recommendation {
+        margin-top: 24px;
+    }
+    .container {
+        max-width: 85vw;
+        margin: 10vw auto;
+        padding: 6vw 0;
+        border-radius: 18px;
+        box-shadow:
+            0 12px 24px -4px #aeaec0a0,   /* нижняя тень */
+            0 -12px 24px -4px #aeaec0a0;  /* верхняя тень */
+        background: #f0f0f3;
+    }
+    .top-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 20;
+        background: #f0f0f3;
+        border-radius: 0 0 32px 32px;
+        box-shadow:
+            0 4px 24px #aeaec040,
+            0 -4px 24px #fff;
+        min-height: 55vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    header {
+        margin-bottom: 8px;
+    }
+    .date {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+    h1 {
+        font-size: 1.2rem;
+        margin: 0 0 4px 0;
+        letter-spacing: 0.09em;
+    }
+    .metrics {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+    .metric-card {
+        width: 90px;
+        height: 90px;
+    }
+    .metric-value {
+        font-size: 1.1rem;
+    }
+    .recommendation {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 55vh;
+        max-width: none;
+        border-radius: 32px 32px 0 0;
+        box-shadow:
+            0 -4px 24px #aeaec040,
+            0 4px 24px #fff;
+        padding: 22px 12px 24px 12px;
+        font-size: 1rem;
+        z-index: 10;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .container {
+        padding-top: 0;
+        padding-bottom: 45vh;
+    }
+    header, .date, h1 {
+        text-align: center;
+    }
+}
