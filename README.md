@@ -20,11 +20,20 @@ This project provides a minimal example of how to securely handle webhook reques
    cd health_idea
    ```
 2. **Create a `.env` file in the project root:**
-   ```env
-   SECRET_KEY=sk_test_1234567890abcdef
-   API_KEY=api_test_abcdef123456
-   WEBHOOK_SECRET=whsec_test_abcdef987654
-   ```
+   Create a `.env` file in the project root and add your own unique values for:
+
+- SECRET_KEY
+- API_KEY
+- WEBHOOK_SECRET
+
+Example:
+```env
+SECRET_KEY=your_own_secret_key
+API_KEY=your_own_api_key
+WEBHOOK_SECRET=your_own_webhook_secret
+```
+
+**Never share your real secrets or commit them to version control.**
 3. **Install dependencies:**
    ```sh
    pip install -r requirements.txt
